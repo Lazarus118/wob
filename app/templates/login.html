@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block body %}
+<div class="login_wrapper">
+  {% if error %}
+  <p class="error"><strong>Error:</strong> {{ error }}</p>
+  {% endif %}
+  
+  <form action="{{ url_for('login') }}" method="post">
+  <div class="login">
+	  <h2 align="center">ENTER</h2>
+	  <hr width="100%">
+      <input type="text" name="username" placeholder="Username" class="username"></input><br /><br />
+      <input type="password" name="password" placeholder="password" class="password"></input><br /><br />
+      <button type="submit" value="login" class="login_button"><p>login</p></button><br /><br /><br />
+	  <button type="button" value="sign_up" class="register_button" onclick="window.location='/signup'"><h6>Don't have an account? </h6><p>Sign up</p></button>
+  </div>		
+  </form>
+</div>  
+{% endblock %}
+
+

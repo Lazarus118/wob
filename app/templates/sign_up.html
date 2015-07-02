@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block body %}
+<div class="login_wrapper">
+  {% if error %}
+  <p class="error"><strong>Error:</strong> {{ error }}</p>
+  {% endif %}
+  
+  <form action="{{ url_for('signup') }}" method="POST">
+  <div class="login">
+	  <h2 align="center">Create your customized Wob account</h2>
+	  <hr width="100%">
+      <input type="text" name="name" placeholder="Username" class="username"></input><br /><br />
+      <input type="password" name="password" placeholder="password" class="password"></input><br /><br />
+	  <input type="text" name="email" placeholder="email" class="email"></input><br /><br />
+      <button type="submit" value="signup" class="register_button"><p>Signup</p></button><br /><br /><br />
+  </div>		
+  </form>
+</div>  
+{% endblock %}
+
+

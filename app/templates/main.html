@@ -1,0 +1,90 @@
+{% extends "index.html" %}
+{% block body %}
+
+  {% if session.logged_in %}
+<div class="wrapper">
+
+	<div class="ad">
+		<h1>Ad space available</h1><br />
+		<p>Contact: 1(767)245-2375</p>
+	</div>
+	
+	<div class="entries">
+  {% for image in post  %}
+  
+<!-- ************************************************************************************** -->
+   <div class="slide">
+
+		<div class="entries-img">
+			<a href="{{ url_for('profile', username=current_user.username, _external=True) }}"><img src="{{ image.photo_filename }}" width="100%"></a>
+				<div class="entries-likes">
+				 <p>- {{ like }} - likes</p>	  
+			</div>
+		</div>
+<!-- ************************************************************************************** -->		
+	<div class="entries-desc">
+		<a href="{{ url_for('profile', username=current_user.username, _external=True) }}"><h4 align="left">{{ image.photo_description }}</h4></a>
+		<h6 align="center">By ~ {{ image.company }}</h6><hr>
+		<p align="center">uploaded : {{ image.uploaded_at }}</p>
+	</div>
+   
+<!-- ************************************************************************************** -->		
+	<div class="hold">
+	<form method="POST" action="{{ url_for('message_sent') }}">
+		<button type="submit" value="hold" name="message"><strong>Place on hold</strong></button>
+	</form>
+	</div>
+<div id="hold_result">{{ message }}</div>
+<!-- ************************************************************************************** -->
+<div class="pay">
+	<form method="POST" action="">
+	<button type="submit" value="buy"><strong>Buy now</strong></button>
+	</form>
+</div>	
+<!-- ************************************************************************************** -->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.like_button').mousedown(function() {
+			  $('.element').css('visibility','visible');
+			});
+	  
+			$('.like_button').mouseup(function() {
+			  $('.element').css('visibility','hidden');
+			});
+		});
+	</script>
+	
+<div class="social">
+	<form method="POST" action="{{ url_for('liked') }}"> 
+		<button type="submit" value="1" name="liked" class="like_button"><img src="/static/img/likes.png" width="24px" height="24px" name="like" /></button>
+		<div class="element"></div>
+	</form>
+	
+	<h5>${{ image.price }} - {{ image.amount }}pcs.</h5>
+	<hr>
+
+		<article>	
+		<div class="social_comments">
+		{% for items in social %} 
+			<p>Admirer Jane: {{ items.comments }}</p><br />
+		{% endfor %}
+		</div>
+		</article>
+		<br/>
+		
+	<form method="POST" action="{{ url_for('add') }}">
+	<input type="text" name="comments" placeholder="Leave a comment..."></input>
+	</form>
+</div>
+</div><br /><!-- /slide -->
+
+  {% else %}
+    <p><em>Unbelievable.  No entries here so far</em></p>
+  {% endfor %}
+  {% endif %}
+
+</div><!-- /entries -->
+</div> <!-- /wrapper -->   
+
+{% endblock %}

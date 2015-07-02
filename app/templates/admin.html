@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block body %}
+
+ {% if current_user.is_authenticated() %}
+<!--
+ <div class="dashboard">
+		<h1 align="center">Dashboard</h1>
+		<hr>
+		<h6>Stats</h6><br />
+
+			<p>Number of likes:<span>{{ like }}</span></p><br />
+			<p>Number of comments:<span>{{ social }}</span></p><br />
+			<p>Number of post submitted:<span>{{ post }}</span></p><br />
+
+		
+</div>
+-->
+	<div class="fields">
+		<form method="POST" action="{{ url_for('admin') }}" enctype=multipart/form-data>
+			<h3 align="center">Enter a description of your item</h3>
+			<input type="text" name="photo_description" placeholder="Photo description"></input><br />
+			<h3 align="center">What's your company name?</h3>
+			<input type="text" name="company" placeholder="Julie's Boutique"></input><br />
+			<h3 align="center">Enter a price</h3>
+			<input type="text" name="price" placeholder="ex. $50.00 EC"></input><br />
+			<h3 align="center">Enter a quantity</h3>
+			<input type="text" name="amount" placeholder="100"></input><br />
+		<!-- ********************************************************************************* -->
+			<div class="files">
+			<h3 align="center">**required** Upload an Image</h3>
+			<input type="file" name="file" class="file"></input>
+			<br /><br />
+			</div>
+			<button type="submit" value="submit">Submit</button><br />	
+		</form>
+	</div>
+
+  {% endif %}
+{% endblock %}

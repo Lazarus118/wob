@@ -1,0 +1,73 @@
+{% extends "index.html" %}
+{% block body %}
+
+  <!-- {% if current_user.is_authenticated() %} -->
+  <div class="profile-user">
+	<p>Welcome to {{ name.username }}'s page</p>
+  </div>
+
+  <div class="post">
+	<p>{{ pieces }} post</p> 
+  </div>
+	
+  <div class="post2">
+	<p>{{ like }} likes</p>
+  </div>	
+  
+
+  
+	<div class="prods-cnt">
+	<!--
+		<div class="category-menu">
+			<ul>
+				<!-- change the "cat-1", "cat-2", "cat-3" with your "Categories ID" 
+
+				<li class="cat-active">All</li>
+
+				<li class="">Category 1</li>
+
+				<li class="">Category 2</li>
+
+				<li class="">Category 3</li>
+			</ul>
+		</div>
+	-->	
+
+		<div class="view-cnt">
+			<div class="list" id="list"></div>
+
+			<div class="grid" id="grid"></div>
+		</div>
+
+		<div class="clear"></div><!-- change the "cat-1", "cat-2", "cat-3" with your "Categories ID" -->
+
+{% for image in post  %}
+		<div class="prod-cnt prod-box shadow cat-1">
+			<img src="{{ image.photo_filename }}">
+
+			<div class="buy-ico"></div>
+
+			<h3><a href="#">{{ image.photo_description }}</a></h3>
+
+			<div class="price-cnt">
+				<div class="price old">
+					$96.00
+				</div>
+
+				<div class="price">
+					${{ image.price }}
+				</div>
+			</div>
+
+			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.</p>
+		</div><!-- end product box prod-box -->
+{% endfor %}
+
+	</div><!-- /prods-cnt -->  
+  
+  
+  
+  
+  <!-- {% endif %} -->
+  
+{% endblock %}  

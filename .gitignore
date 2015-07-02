@@ -1,0 +1,11 @@
+/venv
+/db_repository
+/app/forms.pyc
+/app/__init__.pyc
+/app/models.pyc
+/app/views.pyc
+
+config.pyc
+
+Procfile
+

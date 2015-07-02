@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>Wob</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage very simple demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+
+	
+	<link rel="stylesheet" type="text/css" href="../static/css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="../static/css/examples.css" />
+	<link rel="stylesheet" type="text/css" href="../static/css/jquery.jMosaic.css" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
+	
+	<script type="text/javascript" src="../static/js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="../static/js/jquery.jMosaic.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				autoScrolling: false,
+				slidesColor: ['#000000', '#fff', '#fff']
+				 //afterRender: function() {
+					//$('video').height($(window).height());
+					//$('video').get(0).play();
+					//}
+				});
+		});
+	</script>
+
+</head>
+<body>
+
+
+<div id="fullpage">
+	<div class="header">
+		<img src="static/img/logo.png"></img>
+	</div>
+	<!-- ****************************************************************************************** -->
+	<div class="section active" id="section0">
+	
+<!-- ****************************************************************************************** -->
+<!-- // Facebook page plugin // 
+<!-- ****************************************************************************************** -->
+<div class="facebook-plugin">
+	<div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div></div>		
+</div>		
+		<div class="enter">
+			<button type="button" onclick="window.location='/main'">ENTER</button>
+		</div>	
+		
+		<!-- <img src="static/img/splash.png" /> 
+		<div class="landing-desc"></div>
+		-->
+		
+		<p>Wob is an online platform for both people interested in local fashion and people looking to promote and sell quality clothing</p>
+		<!-- <div id="video"> -->
+
+		
+			<!--<video autoplay loop preload="auto"> 
+				<source src="/static/video/1.mp4" type="video/mp4"> 
+			</video> 
+		</div> -->
+		
+	</div>
+	<!-- ****************************************************************************************** -->
+	<div class="section" id="section1">
+		<p>Daily discovery of brands and latest fashion from the comfort of your home or office.</p><br />
+		
+		<!-- ****************************************************************************************** -->
+		<script type="text/javascript">
+		$('.pictures').jMosaic({
+			items_type: "img", //Type of elements in the selector (Default: img);
+			min_row_height: 150, //Minimal row height (Default: 150);
+			margin: 1, //Space between elements (Default: 0);
+			is_first_big: false //First row - largest (Default: false).
+		})
+		</script>
+		<div class="pictures">
+			<img src="/static/img/one.jpg" width="267" height="400"/>
+			<img src="/static/img/two.jpg" width="500" height="350"/>
+			<img src="/static/img/three.jpg" />
+			<img src="/static/img/four.jpg" />
+			<img src="/static/img/five.jpg" />
+			<img src="/static/img/six.jpg" />
+		</div>	
+	</div>
+	<!-- ****************************************************************************************** -->
+	<div class="section" id="section2">
+		<div class="sec2-title">
+			<p>What are the benefits of taking your business online with Wob?</p>
+		</div>
+		
+		<img src="static/img/stat.png" />
+			
+		<div class="landing-footer">
+			<p>© 2015 Wob. All rights reserved.</p>
+		</div>
+	</div>
+</div>
+
+<!-- ****************************************************************************************** -->
+<!-- // Facebook page plugin // 
+<!-- ****************************************************************************************** -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script
+
+</body>
+</html>
