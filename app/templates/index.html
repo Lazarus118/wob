@@ -46,8 +46,10 @@
 		<a href="{{ url_for('index') }}"><h2 align="left">wob</h2></a>
 		
 		{% if current_user.is_authenticated() %}
-		 <button type="button" onclick="window.location='admin'">Add new</button>
+		 <button type="button" onclick="window.location='admin'">+ Add new</button>
 		{% endif %} 
+		
+		<button type="button" onclick="window.location='style_up'">styling</button>
 		
 		<button type="button" onclick="window.location='login'">
 		
@@ -64,20 +66,6 @@
 
   {% block body %}{% endblock %}
   
-<!--  
-<div class="footer">
-	<div class="footer-background">
-		<a href="http://flask.pocoo.org/">
-		<img
-		src="http://flask.pocoo.org/static/badges/powered-by-flask-s.png"
-		border="0"
-		alt="powered by Flask"
-		title="powered by Flask"></a>
-   </div>
-</div>
--->	
-
-
   
   {% for message in get_flashed_messages() %}
     <!-- <div class=flash>{{ message }}</div> -->
