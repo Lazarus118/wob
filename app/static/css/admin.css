@@ -1,3 +1,37 @@
+.listings {
+	display: block;
+	position: relative;
+	
+}
+
+.listings   h3 {
+	position: relative;
+	color: #BDC3C7;
+}
+
+.listings ul li {
+	list-style: none;
+	text-align: center;
+}
+
+.interactions {
+	display: block;
+	top: 20%;
+	position: relative;	
+}
+
+.interactions  h3 {
+	position: relative;
+	color: #BDC3C7;
+}
+
+.interactions p {
+	text-align: center;
+	color: #ddd;
+}
+
+
+
 .dashboard {
 	display: block;
 	border-right: 2px solid #ECF0F1;

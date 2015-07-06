@@ -8,6 +8,7 @@ from forms import LoginForm, CommentForm, LikeForm, adminForm, signupForm
 from models import User, Image, Comments, Like
 from twilio.rest import TwilioRestClient
 import os
+from datetime import datetime
 from sqlalchemy import func
 
 # Find these values at https://twilio.com/user/account
@@ -18,6 +19,10 @@ client = TwilioRestClient(account_sid, auth_token)
 @app.before_request
 def before_request():
 	g.user = current_user
+	
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404	
 
 #***********************************************************************#
 # // HOME //
@@ -26,6 +31,12 @@ def before_request():
 def index():
         return render_template('landing.html')
 		
+#***********************************************************************#
+# // SOON //
+#***********************************************************************#
+@app.route('/soon')
+def soon():
+        return render_template('soon.html')		
 		
 @app.route('/message_sent', methods=['POST'])
 def message_sent():
@@ -35,7 +46,7 @@ def message_sent():
 	return redirect(url_for('main'))
 	
 	
-@app.route('/liked', methods=['POST'])
+@app.route('/liked', methods=['GET', 'POST'])
 def liked():
 
 	if request.method == 'POST':
@@ -46,7 +57,7 @@ def liked():
 	return redirect(url_for('main'))
 	
 
-@app.route('/add', methods=['POST'])
+@app.route('/add', methods=['GET', 'POST'])
 def add():
 	if request.method == 'POST':
 		comment = Comments(request.form['comments'])
@@ -63,7 +74,7 @@ def main():
 	post = Image.query.all()
 	social = Comments.query.all()
 	user = User.query.all()
-	like = db.session.query(func.count('*')).select_from(Like).scalar()  
+	like = db.session.query(func.count('*')).select_from(Like).scalar()	
 	return render_template('main.html', 
 	post=post, 
 	social=social,
@@ -92,7 +103,7 @@ def profile(username):
 #***********************************************************************#
 # // STYLING //
 #***********************************************************************#
-@app.route('/style_up')
+@app.route('/style_up', methods=['GET', 'POST'])
 def styling():
 	return render_template('styling.html')
 	
@@ -169,12 +180,18 @@ def admin():
 		return redirect(url_for('admin'))
 			
 #***********************************************************************#
-				
+	listings = Image.query.all()			
 	post = db.session.query(func.count('*')).select_from(Image).scalar()
 	social = db.session.query(func.count('*')).select_from(Comments).scalar()
-	like = db.session.query(func.count('*')).select_from(Like).scalar()  
+	like = db.session.query(func.count('*')).select_from(Like).scalar()
+	time = datetime.date() 	
 	
-	return render_template('admin.html', like=like, post=post, social=social)
+	return render_template('admin.html', 
+	like=like, 
+	post=post, 
+	social=social, 
+	time=time, 
+	listings=listings)
 
 
 #_________________ NEW  _______________________

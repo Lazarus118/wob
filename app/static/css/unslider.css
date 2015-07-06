@@ -1,0 +1,47 @@
+.banner { 
+  margin-top: 20%;
+  margin-left: 20%; 
+  margin: auto;
+  padding: 10px;
+}
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+
+#previous {
+display: block;
+float: left;
+margin-left: 2%;
+}
+
+#next {
+display: block;
+float: right;
+margin-right: 2%;
+}
+
+#red {
+display: block;
+position: relative;
+width: 1000px;
+height: 250px;
+text-align: center;
+background: red;
+}
+
+#blue {
+display: block;
+position: relative;
+width: 1000px;
+height: 250px;
+text-align: center;
+background: blue;
+}
+
+#green {
+display: block;
+position: relative;
+width: 1000px;
+height: 250px;
+text-align: center;
+background: green;
+}

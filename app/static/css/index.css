@@ -8,7 +8,7 @@ body {
 	padding-top:60px;
 /* 60px to make the container go all the way to the bottom of the topbar */
 /* background: #ecf0f1; */
-	background:url(/static/img/cream_dust.png) repeat scroll 0 0 #f8f8f8
+	background:url(/static/img/cream_dust.png) repeat scroll 0 0 #f8f8f8);
 }
 
 .header {
@@ -21,7 +21,7 @@ body {
 /* opacity: 0.9; */
 	background:#350e35;
 	position:fixed;
-	z-index:1000
+	z-index:1000;
 }
 
 .header button {
@@ -33,7 +33,7 @@ body {
 	border:none;
 	border-radius:4px;
 	color:#fff;
-	margin-right:1%
+	margin-right:1%;
 }
 
 .header button:nth-child(2) {
@@ -44,7 +44,7 @@ body {
 	border:none;
 	border-radius:4px;
 	color:#fff;
-	margin-right:1%
+	margin-right:1%;
 }
 
 .header button:nth-child(3) {
@@ -55,18 +55,27 @@ body {
 	border:none;
 	border-radius:4px;
 	color:#fff;
-	margin-right:1%
+	margin-right:1%;
 }
 
 .header h2,a {
 	display:inline;
 	color:#674172;
 	margin-left:1%;
-	text-decoration:none
+	text-decoration:none;
 }
 
 .header button a {
-	color:#fff
+	color:#fff;
+}
+
+.logo-mark {
+  margin: auto;
+  z-index: -1;
+  top: 25%;
+  display: block;
+  position: absolute;
+  text-align: center;
 }
 
 .slide {
@@ -76,7 +85,7 @@ body {
 	margin:0 auto;
 	background:#fff;
 	margin-top:10%;
-	position:relative
+	position:relative;
 /*
         -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -85,7 +94,7 @@ body {
 }
 
 .slide img {
-	padding:0 0 20px
+	padding:0 0 20px;
 }
 
 .social {
@@ -103,18 +112,18 @@ body {
 	position:relative;
 	padding-top:3%;
 	margin:3%;
-	clear:both
+	clear:both;
 }
 
 .social h5 {
 	display:block;
 	margin-top:-5%;
 	font-family:'Indie Flower',cursive;
-	color:#000
+	color:#000;
 }
 
 .social img {
-	margin-left:2%
+	margin-left:2%;
 }
 
 .social_likes p,span {
@@ -124,7 +133,7 @@ body {
 	font-size:15px;
 	left:15%;
 	position:absolute;
-	margin-top:-15%
+	margin-top:-15%;
 }
 
 .social_comments {
@@ -134,12 +143,12 @@ body {
 	display:block;
 	width:100%;
 /* margin-top: -10%; */
-	overflow:auto
+	overflow:auto;
 }
 
 .social_comments p {
 	color:#ABB7B7;
-	font-size:15px
+	font-size:15px;
 }
 
 .social input {
@@ -148,12 +157,12 @@ body {
 	width:90%;
 	bottom:0;
 	clear:both;
-	background:#ECF0F1
+	background:#ECF0F1;
 }
 
 .social input[placeholder] {
 	color:#95A5A6;
-	font-size:18px
+	font-size:18px;
 }
 
 .social button {
@@ -164,12 +173,12 @@ body {
 	opacity:.5;
 	clear:both;
 	float:right;
-	top:0
+	top:0;
 }
 
 .entries-img img {
 	max-height:350px;
-	border:0 none
+	border:0 none;
 }
 
 .entries-likes {
@@ -181,12 +190,12 @@ body {
 	height:5%;
 	opacity:.5;
 	margin-top:-20%;
-	border-radius:0 4px
+	border-radius:0 4px;
 }
 
 .entries-likes p {
 	color:#fff;
-	padding:3px
+	padding:3px;
 }
 
 .hold button {
@@ -199,12 +208,12 @@ body {
 	height:35px;
 	width:50%;
 	float:left;
-	margin-top:-10%
+	margin-top:-10%;
 }
 
 #hold_result {
 	display:none;
-	visibility:hidden
+	visibility:hidden;
 }
 
 .pay button {
@@ -216,7 +225,7 @@ body {
 	height:35px;
 	width:50%;
 	float:right;
-	margin-top:-10%
+	margin-top:-10%;
 }
 
 .entries-desc {
@@ -231,7 +240,7 @@ body {
 	position:absolute;
 	text-align:center;
 	font-size:13px!important;
-	font-family:'Helvetica Neue',Helvetica,sans-serif
+	font-family:'Helvetica Neue',Helvetica,sans-serif;
 }
 
 .ad {
@@ -243,14 +252,18 @@ body {
 	z-index:999;
 	right:1%;
 	top:20%;
-	border:1px dotted #95A5A6
+	border:1px dotted #95A5A6;
 }
 
-.ad h1,p {
+.ad h1  {
 	display:inline;
 	margin:0 auto;
 	color:#95A5A6;
-	padding:2%
+	padding:2%;
+}
+
+.ad p  {
+	color:#95A5A6;
 }
 
 .entries-desc h4 {
@@ -260,21 +273,21 @@ body {
 	color:#95A5A6;
 /* color: #000; */
 	position:relative;
-	font-family:'Indie Flower',cursive
+	font-family:'Indie Flower',cursive;
 }
 
 .entries-desc h6 {
 	color:#95A5A6;
-	text-align:left
+	text-align:left;
 }
 
 .entries-desc p {
 	color:#95A5A6;
-	text-align:left
+	text-align:left;
 }
 
 .entries-desc hr {
-	border-bottom:1px dotted #95A5A6
+	border-bottom:1px dotted #95A5A6;
 /* border-color: #95A5A6; */
 }
 
@@ -289,7 +302,7 @@ body {
 	position:fixed;
 	height:3%;
 	left:28%;
-	z-index:1000
+	z-index:1000;
 }
 
 .wrapper {
@@ -301,17 +314,17 @@ body {
 	background:none repeat scroll 0 0 #FFF;
 	border:1px dotted #DADFE1;
 	position:absolute;
-	top:5%
+	top:5%;
 }
 
 .login_wrapper {
 	display:block;
-	background:#000;
-	opacity:.8;
+	/* background:#000; */
+	/* opacity:0.8; */
 	width:100%;
 	height:100%;
 	top:7%;
-	position:absolute
+	position:relative;
 }
 
 .login {
@@ -322,7 +335,7 @@ body {
 	border-radius:5px;
 	padding:50px 50px 100px;
 	position:relative;
-	z-index:1000
+	z-index:1000;
 }
 
 .login h2 {
@@ -330,11 +343,13 @@ body {
 }
 
 .login hr {
+/*
 	-webkit-box-shadow:0 6px 10px 1px #DADFE1;
 	-moz-box-shadow:0 6px 10px 1px #DADFE1;
 	box-shadow:0 6px 10px 1px #DADFE1;
+*/	
 	background-color:#DADFE1;
-	border-bottom:none
+	border-bottom:none;
 }
 
 /** ######### **/
@@ -348,7 +363,7 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	font-size:20px;
 	color:#555;
 	border-radius:4px;
-	align:center
+	align:center;
 }
 
 .username {
@@ -357,7 +372,7 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	height:10%;
 	margin-left:10%;
 	margin-bottom:10%;
-	position:absolute
+	position:absolute;
 }
 
 .password {
@@ -365,7 +380,7 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	width:65%;
 	margin-left:10%;
 	height:10%;
-	position:absolute
+	position:absolute;
 }
 
 .email {
@@ -373,7 +388,7 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	width:65%;
 	margin-left:10%;
 	height:10%;
-	position:absolute
+	position:absolute;
 }
 
 .login_button {
@@ -384,12 +399,12 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	margin-left:10%;
 	background:#ff5a5f;
 	height:50px;
-	position:absolute
+	position:relative;
 }
 
 .login_button p {
 	color:#fff;
-	font-size:20px
+	font-size:20px;
 }
 
 .register_button {
@@ -400,18 +415,18 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	margin-left:10%;
 	background:#00d1c1;
 	height:50px;
-	position:absolute
+	position:relative;
 }
 
 .register_button p {
 	color:#fff;
 	font-size:20px;
-	margin-right:15%
+	margin-right:15%;
 }
 
 .register_button h6 {
 	float:left;
-	clear:both
+	clear:both;
 }
 
 .footer {
@@ -419,14 +434,14 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	bottom:0;
 	margin:auto 45%;
 	position:absolute;
-	z-index:1
+	z-index:1;
 }
 
 .footer-background {
 	display:block;
 	width:100%;
 	background:#aaa;
-	position:relative
+	position:relative;
 }
 
 /** ######### **/
@@ -434,23 +449,23 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 /** ######### **/
 .navbar-inverse .brand,.navbar-inverse .nav > li > a {
 	color:#560878;
-	margin-left:45%
+	margin-left:45%;
 }
 
 .navbar-inverse .navbar-inner {
 	background-color:#9B59B6;
 	background-image:linear-gradient(to bottom,#6D3384,#8E44AD);
 	background-repeat:repeat-x;
-	border-color:#9B59B6
+	border-color:#9B59B6;
 }
 
 .navbar-inverse .nav .active > a,.navbar-inverse .nav .active > a:hover,.navbar-inverse .nav .active > a:focus {
 	color:#FFF;
-	background-color:#8E44AD
+	background-color:#8E44AD;
 }
 
 .header-title {
-	font-family:'Pacifico',cursive
+	font-family:'Pacifico',cursive;
 }
 
 .navbar .nav {
@@ -458,7 +473,7 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	right:0;
 	display:block;
 	float:right;
-	margin:0 10px 0 0
+	margin:0 10px 0 0;
 }
 
 .profile-user {
@@ -487,7 +502,7 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	height:10%;
 	color:#888;
 	font:italic 14px georgia;
-	box-shadow:0 0 5px rgba(50,50,50,0.31)
+	box-shadow:0 0 5px rgba(50,50,50,0.31);
 }
 
 .post2 {
@@ -505,5 +520,5 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 	height:10%;
 	color:#888;
 	font:italic 14px georgia;
-	box-shadow:0 0 5px rgba(50,50,50,0.31)
+	box-shadow:0 0 5px rgba(50,50,50,0.31);
 }

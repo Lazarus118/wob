@@ -54,7 +54,7 @@ class Image(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	photo_description = db.Column(db.Unicode(64))
 	photo_filename = db.Column(db.Unicode(128))
-	#uploaded_at = db.Column(dateTime,default=datetime.datetime.utcnow)
+	#uploaded_at = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 	company = db.Column(db.String(64), index=True)
 	price = db.Column(db.String(12), index=True)
 	amount = db.Column(db.String(100), index=True)

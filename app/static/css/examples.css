@@ -97,14 +97,13 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 }
 
 .sec2-title p {
-	display:block;
-	font-family:'Open Sans Condensed',sans-serif;
-	font-size:32px;
-	text-align:center;
-	color:#000;
-	position:absolute;
-	margin-top:-7%;
-	margin-left:22%
+  display: block;
+  font-family: 'Open Sans Condensed',sans-serif;
+  font-size: 32px;
+  text-align: center;
+  color: #000;
+  position: relative;
+  margin-top: -8%;
 }
 
 .header {

@@ -1,4 +1,70 @@
 {% extends "index.html" %}
 {% block body %}
 
+
+<div class="banner">
+    <ul>
+        <li><div id="red"></div></li>
+        <li><div id="blue"></div></li>
+        <li><div id="green"></div></li>
+    </ul>
+</div>
+
+<div class="unslider-arrow prev" id="previous"><a href="#"><img src="/static/img/prev.png"></a></div>
+<div class="unslider-arrow next" id="next"><a href="#"><img src="/static/img/next.png"></a></div>
+
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="static/js/unslider.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('.banner').unslider();
+	speed: 500,               //  The speed to animate each slide (in milliseconds)
+	delay: 3000,              //  The delay between slide animations (in milliseconds)
+	complete: function() {},  //  A function that gets called after every slide animation
+	keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+	dots: false,               //  Display dot navigation
+	fluid: false              //  Support responsive design. May break non-responsive designs
+	
+});
+
+var slidey = $('.banner').unslider(),
+    data = slidey.data('unslider');
+    
+//  Start Unslider
+//data.start();
+
+//  Pause Unslider
+data.stop();
+
+//  Move to a slide index, with optional callback
+//data.move(2, function() {});
+//  data.move(0);
+
+//  Manually enable keyboard shortcuts
+//data.keys();
+
+//  Move to the next slide (or the first slide if there isn't one)
+//data.next();
+
+//  Move to the previous slide (or the last slide if there isn't one)
+//data.prev();
+
+//  Append the navigation dots manually
+//data.dots();
+
+
+
+</script>
+
+<script type="text/javascript">
+    var unslider = $('.banner').unslider();
+    
+    $('.unslider-arrow').click(function() {
+        var fn = this.className.split(' ')[1];
+        
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+</script>
+
 {% endblock %}  
