@@ -15,8 +15,11 @@ class adminForm(form.Form):
 	company = fields.TextField('company')
 	price = fields.TextField('price')
 	amount = fields.TextField('amount')
+	size = fields.TextField('size')
 	
 class signupForm(form.Form):
 	username = fields.TextField('username', validators=[validators.DataRequired()])
 	password = fields.TextField('password', validators=[validators.DataRequired()])
 	email = fields.TextField('email', validators=[validators.DataRequired()])
+	number = fields.TextField('number', validators=[validators.DataRequired()])
+	#retailer = fields.BooleanField('check', default=False)

@@ -22,7 +22,7 @@ def before_request():
 	
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404	
+	return render_template('404.html'), 404	
 
 #***********************************************************************#
 # // HOME //
@@ -55,8 +55,16 @@ def liked():
 		db.session.commit()
 		flash('Thanks for the admiration!')
 	return redirect(url_for('main'))
-	
 
+
+@app.route('/deleted', methods=['GET', 'POST'])
+def deleted():
+
+	if request.method == 'POST':
+		Image.query.filter(Image.id == 123).delete()
+	return redirect(url_for('admin'))	
+
+	
 @app.route('/add', methods=['GET', 'POST'])
 def add():
 	if request.method == 'POST':
@@ -87,17 +95,13 @@ def main():
 #***********************************************************************#
 @app.route('/u/<username>')
 def profile(username):
-	name = User.query.filter_by(username=username).first()
-	pieces = db.session.query(func.count('*')).select_from(Image).scalar()
-	like = db.session.query(func.count('*')).select_from(Like).scalar() 
+	name = User.query.filter_by(username=username).first() 
 	post = Image.query.all()
 	if username is None:
 		abort(404)
 	return render_template('profile.html', 
 	name=name,
-	post=post,
-	pieces=pieces,
-	like=like)
+	post=post)
 
 
 #***********************************************************************#
@@ -132,10 +136,12 @@ def signup():
 	if request.method == 'POST':
 		enter_signup = User(request.form['username'],
 							request.form['password'],
-							request.form['email'])
+							request.form['email'],
+							request.form['number'])
+							#request.form['check'])
 		db.session.add(enter_signup)
 		db.session.commit()
-		return redirect(url_for('login'))
+		return redirect(url_for('index'))
 	return render_template('sign_up.html')
 		
 
@@ -152,7 +158,7 @@ def logout():
 #***********************************************************************#	
 UPLOAD_FOLDER = '/home/lazarus/Programming/Flask_apps/wob-copy/app/static/img/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 	
 def allowed_file(filename):
 	return '.' in filename and \
@@ -160,9 +166,18 @@ def allowed_file(filename):
 
 #***********************************************************************#
 
-@app.route('/admin/', methods=['GET', 'POST'])
+@app.route('/admin/')
 def admin():
+	delete = deleted()
 	form = adminForm(request.form)
+	listings = Image.query.all()	
+	post = db.session.query(func.count('*')).select_from(Image).scalar()
+	social = db.session.query(func.count('*')).select_from(Comments).scalar()
+	like = db.session.query(func.count('*')).select_from(Like).scalar()
+	time = datetime.now().date()
+	
+#***********************************************************************#
+	
 	if request.method == 'POST':
 		
 		file = request.files['file']
@@ -179,20 +194,14 @@ def admin():
 		db.session.commit()
 		return redirect(url_for('admin'))
 			
-#***********************************************************************#
-	listings = Image.query.all()			
-	post = db.session.query(func.count('*')).select_from(Image).scalar()
-	social = db.session.query(func.count('*')).select_from(Comments).scalar()
-	like = db.session.query(func.count('*')).select_from(Like).scalar()
-	time = datetime.date() 	
 	
-	return render_template('admin.html', 
+	return render_template('admin.html',
 	like=like, 
 	post=post, 
 	social=social, 
 	time=time, 
-	listings=listings)
-
+	listings=listings,
+	delete=delete)
 
 #_________________ NEW  _______________________
 @lm.user_loader

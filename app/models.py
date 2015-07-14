@@ -9,7 +9,9 @@ class User(db.Model):
 	username = db.Column(db.String(20), index=True, unique=True)
 	password = db.Column(db.String(64), index=True)
 	email = db.Column(db.String(64), index=True, unique=True)
-	comment = db.relationship('Comments', backref='author', lazy='dynamic')
+	number = db.Column(db.String(20), index=True, unique=True)
+	#retailer = db.Column(db.String(10), index=True, unique=True)
+	comment = db.relationship('Comments', backref='user', cascade="all, delete-orphan", lazy='dynamic')
 
 	
 	def is_authenticated(self):
@@ -24,8 +26,9 @@ class User(db.Model):
 		return unicode(self.id)
 	def __repr__(self):
 		return '<User %r>' % (self.username)
-	def __init__(self, comment):
-		self.comment = comment	
+	def __init__(self, comment, number):
+		self.comment = comment
+		self.number = number 	
 		
 #*************************************************************************************#
 # //Comments database class 
@@ -35,8 +38,10 @@ class Comments(db.Model):
 	comments = db.Column(db.String(64), index=True, unique=True)
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 	
-	def __init__(self, comments):
+	def __init__(self, comments, user_id):
 		self.comments = comments
+		self.user_id = user_id
+		
 
 #*************************************************************************************#
 # //Number of Likes database class 
@@ -54,18 +59,20 @@ class Image(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	photo_description = db.Column(db.Unicode(64))
 	photo_filename = db.Column(db.Unicode(128))
-	#uploaded_at = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+	uploaded_at = db.Column(db.DateTime)
 	company = db.Column(db.String(64), index=True)
 	price = db.Column(db.String(12), index=True)
 	amount = db.Column(db.String(100), index=True)
+	size = db.Column(db.String(50), index=True)
 
-	def __init__(self, photo_description, photo_filename, company, price, amount):	
+	def __init__(self, photo_description, photo_filename, company, price, amount, size, uploaded_at):	
 		self.photo_description = photo_description
 		self.photo_filename = photo_filename
 		self.company = company
 		self.price = price
 		self.amount = amount
-		#self.uploaded_at = uploaded_at
+		self.size = size 
+		self.uploaded_at = uploaded_at
 	
 	
 	

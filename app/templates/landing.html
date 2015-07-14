@@ -1,3 +1,5 @@
+{% block body %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -30,11 +32,7 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				autoScrolling: false,
-				slidesColor: ['#000000', '#fff', '#fff']
-				 //afterRender: function() {
-					//$('video').height($(window).height());
-					//$('video').get(0).play();
-					//}
+				slidesColor: ['#000000', '#fff', '#F2F1EF']
 				});
 		});
 	</script>
@@ -44,9 +42,11 @@
 
 
 <div id="fullpage">
+    
 	<div class="header">
-		<img src="static/img/logo.png"></img>
+		<h2>WOB</h2>
 	</div>
+	
 	<!-- ****************************************************************************************** -->
 	<div class="section active" id="section0">
 	
@@ -56,27 +56,49 @@
 <div class="facebook-plugin">
 	<div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div></div>		
 </div>		
+
+		<div class="mission">
+			<img src="/static/img/logo-mark-landing.png"  />
+			<h3>Your go-to place for local fashion</h3>
+		</div>
+		
 		<div class="enter">
-			<button type="button" onclick="window.location='/main'">ENTER</button>
+			<form method="post" action="{{ url_for('login') }}">
+				<input type="text" name="username" placeholder="Username" required="required"></input>
+				<input type="password" name="password" placeholder="Password" required="required"></input><br />
+				<button type="submit">Log in</button><h3>or</h3><a href="javascript:void(0)"><h5>Join</h5></a> 
+			</form>
 		</div>	
 		
-		<!-- <img src="static/img/brands/splash.png" /> 
-		<div class="landing-desc"></div>
-		-->
+		<!-- ****************************************************************************************** -->
+		
+		<div class="sign_up">
+			<form method="post" action="{{ url_for('signup') }}">
+				<input type="text" name="username" placeholder="Username" required="required"></input>
+				<input type="password" name="password" placeholder="Password" required="required"></input>
+				<input type="text" name="email" placeholder="Email" required="required"></input>
+				<input type="text" name="number" placeholder="Cell: 1(767)555-555" required="required"></input><br />
+				
+				<!-- **** Slide ONE **** 
+				<hr>
+				<h4>USER</h4> <h4>RETAILER</h4>
+				  
+					<div class="slideOne">
+						<input type="checkbox" value="1" id="slideOne" name="check" />
+						<label for="slideOne"></label>
+					</div>
+				   ******************* -->
+				
+				<button type="submit">Sign up</button><h3>or</h3><a href="javascript:void(0)"><h5>Login</h5></a> 
+			</form>
+		</div>
 		
 		<p>Wob is an online platform for both people interested in local fashion and people looking to promote and sell quality clothing</p>
-		<!-- <div id="video"> -->
-
-		
-			<!--<video autoplay loop preload="auto"> 
-				<source src="/static/video/1.mp4" type="video/mp4"> 
-			</video> 
-		</div> -->
 		
 	</div>
 	<!-- ****************************************************************************************** -->
 	<div class="section" id="section1">
-		<p>Daily discovery of brands and latest fashion from the comfort of your home or office.</p><br />
+		<p>Discover daily, the latest in Brands and Fashion from the comfort of your home or office.</p><br />
 		
 		<!-- ****************************************************************************************** -->
 		<script type="text/javascript">
@@ -130,7 +152,46 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-</script
+</script>
 
+<script>
+$(document).ready(function() {
+
+$(".sign_up").css("visibility", "hidden");
+
+	$('.enter a').click(function() {
+		$(".sign_up").css("visibility", "visible");
+		$(".enter").css("visibility", "hidden");
+	});
+	//***********************************************//
+	$('.sign_up a').click(function() {
+		$(".enter").css("visibility", "visible");
+		$(".sign_up").css("visibility", "hidden");
+	});
+});	
+</script>
+
+<!-- ****************************************************************************************** -->
+<!-- // Clicky.com Analytics // 
+<!-- ****************************************************************************************** -->
+<a title="Real Time Analytics" href="http://clicky.com/100859888"><img alt="Real Time Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+<script type="text/javascript">
+var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(100859888);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100859888ns.gif" /></p></noscript>
+<!-- ****************************************************************************************** -->
+<!-- // Clicky.com Analytics // 
+<!-- ****************************************************************************************** -->
 </body>
 </html>
+
+{% endblock %}
+

@@ -26,6 +26,9 @@
 					{% for list in listings %}
 					<ul>
 						<li><p>{{ list.photo_description }}<br />amount: {{ list.amount }} @ ${{ list.price }}<p></li>
+						<form method="POST" action="{{ url_for('deleted') }}"> 
+							<button type="submit"><img src="/static/img/delete.png" /></button>
+						</form>
 					</ul>
 					{% endfor %}
 				</div>
@@ -50,8 +53,8 @@
 		<form method="POST" action="{{ url_for('admin') }}" enctype=multipart/form-data>
 			<h3 align="center">Enter a description of your item</h3>
 			<input type="text" name="photo_description" placeholder="Photo description"></input><br />
-			<h3 align="center">What's your company name?</h3>
-			<input type="text" name="company" placeholder="Julie's Boutique"></input><br />
+			<h3 align="center">Enter a size</h3>
+			<input type="text" name="size" placeholder="Medium"></input><br />
 			<h3 align="center">Enter a price</h3>
 			<input type="text" name="price" placeholder="ex. $50.00 EC"></input><br />
 			<h3 align="center">Enter a quantity</h3>

@@ -13,6 +13,7 @@
   {% for image in post  %}
   
 <!-- ************************************************************************************** -->
+   <div class="element"></div>	
    <div class="slide">
 
 		<div class="entries-img">
@@ -24,7 +25,16 @@
 <!-- ************************************************************************************** -->		
 	<div class="entries-desc">
 		<a href="{{ url_for('profile', username=current_user.username, _external=True) }}"><h4 align="left">{{ image.photo_description }}</h4></a>
-		<h6 align="center">By ~ {{ image.company }}</h6><hr>
+		<hr>
+		<h5>${{ image.price }} // {{ image.amount }}pcs.</h5>
+		<h5>Size: {{ image.size }}</h5>
+		<!-- <h6 align="center">By ~ {{ image.company }}</h6> -->
+
+	
+				<h6 align="center">By ~ {{ username }}</h6>
+
+
+		<hr>
 		<p align="center">uploaded : {{ image.uploaded_at }}</p>
 	</div>
    
@@ -42,26 +52,11 @@
 	</form>
 </div>	
 <!-- ************************************************************************************** -->
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.like_button').mousedown(function() {
-			  $('.element').css('visibility','visible');
-			});
-	  
-			$('.like_button').mouseup(function() {
-			  $('.element').css('visibility','hidden');
-			});
-		});
-	</script>
 	
 <div class="social">
 	<form method="POST" action="{{ url_for('liked') }}"> 
 		<button type="submit" value="1" name="liked" class="like_button"><img src="/static/img/likes.png" width="24px" height="24px" name="like" /></button>
-		<div class="element"></div>
 	</form>
-	
-	<h5>${{ image.price }} - {{ image.amount }}pcs.</h5>
 	<hr>
 
 		<article>	
@@ -81,7 +76,7 @@
 
   {% else %}
     <p><em>Unbelievable.  No entries here so far</em></p>
-  {% endfor %}
+	{% endfor %}
   {% endif %}
 
 </div><!-- /entries -->

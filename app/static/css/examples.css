@@ -1,5 +1,5 @@
 @import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
-
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 /* Reset CSS
  * --------------------------------------- */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
@@ -19,15 +19,17 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 #section0 img {
 	display:block;
-	float:right;
+	float:left;
+	/*
 	width:40%;
 	margin-right:5%;
 	z-index:1000;
-	position:relative
+	position:relative;
+	*/
 }
 
 #section0 p {
-	z-index:1000;
+	z-index:999;
 	font-family:'Open Sans Condensed',sans-serif;
 	color:#000;
 	padding:5%;
@@ -90,7 +92,8 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	font-family:'Open Sans Condensed',sans-serif;
 	font-size:32px;
 	text-align:center;
-	color:#000;
+	color:#ABB7B7;
+	font-weight: 700;
 	top:-8%;
 	padding:100px;
 	position:relative
@@ -100,10 +103,12 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
   display: block;
   font-family: 'Open Sans Condensed',sans-serif;
   font-size: 32px;
+  font-weight: 700;
   text-align: center;
-  color: #000;
+  color: #ABB7B7;
   position: relative;
   margin-top: -8%;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -120,25 +125,140 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	*/
 }
 
-.header img {
+.header h2 {
 	padding:15px;
-	float:left
+	float:left;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.mission  h3{
+  color: #E74C3C;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Indie Flower', cursive;
+  display: block;
+  margin-top: -7%;
+  margin-left: 20%;
+  clear: both;
+  position: absolute;
+}
+
+.mission img {
+	width: 90px;
+	height: 91px;
+	margin-left: 27%;
+    top: 4%;
+    position: absolute;
+}
+
+.enter {
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 36%;
+  background: #000;
+  opacity: 0.8;
+  border-radius: 2px;
+  top: 31%;
+  margin-left: 20%;
+}
+
+.enter input {
+  display: inline-block;
+  margin: 5%;
+  border: 0 none;
+  border-radius: 2px;
+  padding: .66em .95em;
+  font-size: 16px;
+  background: #FDE3A7;
+  position: relative;
+  width: 60%;
 }
 
 .enter button {
-	float:left;
-	display:inline-block;
-	font-family:'Open Sans Condensed',sans-serif;
-	font-size:20px;
-	background:#000;
-	border:medium none;
-	border-radius:4px;
-	color:#FFF;
-	margin-left:40%;
-	margin-top:8%;
-	opacity:.8;
-	width:15%;
-	height:50px
+	border: 0 none;
+	background: #350e35;
+	float: left;
+	color: #fff;
+	border-radius: 2px;
+	width: 75px;
+	height: 50px;
+	font-weight: 700;
+	margin-left: 9%;
+}
+
+.enter h3{
+	block: inline-block;
+	float: left;
+	color: #fff;
+	margin-left: 35%;
+	margin-top: 7%;
+	font-weight: 700;
+	
+}
+
+.enter h5, a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	margin-left: -2%;
+}
+
+.sign_up {
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 60%;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.8;
+  border-radius: 2px;
+  top: 31%;
+  margin-left: 20%;
+}
+
+.sign_up  input {
+  display: inline-block;
+  margin: 5%;
+  border: 0 none;
+  border-radius: 2px;
+  padding: .66em .95em;
+  font-size: 16px;
+  background: #FDE3A7;
+  position: relative;
+  width: 60%;
+}
+
+.sign_up  button {
+	border: 0 none;
+	background: #350e35;
+	float: left;
+	color: #fff;
+	border-radius: 2px;
+	width: 75px;
+	height: 50px;
+	font-weight: 700;
+	margin-left: 9%;
+}
+
+.sign_up  h3{
+	block: inline-block;
+	float: left;
+	color: #fff;
+	margin-left: 35%;
+	margin-top: 7%;
+	font-weight: 700;
+	
+}
+
+.sign_up  h5, a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	margin-left: -2%;
 }
 
 .landing-footer {
@@ -158,6 +278,80 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	font-size:15px;
 	padding-top:9%
 }
+
+/******* SLIDE ONE *******/
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+.slideOne {
+	width: 50px;
+	height: 10px;
+	background: #FDE3A7;
+	margin: 20px auto;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.sign_up h4 {
+	float: left;
+	color: #fff;
+	margin-left: 4%;
+    margin-top: 2%;
+}
+
+.sign_up h4:nth-of-type(2n) {
+	float: right;
+	color: #fff;
+	margin-right: 2%;
+	margin-top: 2;
+}
+
+.slideOne label {
+	display: block;
+	width: 16px;
+	height: 16px;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+	cursor: pointer;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	background: #fcfff4;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.slideOne input[type=checkbox]:checked + label {
+	left: 37px;
+}
+
+/******************************/
+
 
 a {
 	text-decoration:none

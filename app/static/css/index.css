@@ -115,15 +115,19 @@ body {
 	clear:both;
 }
 
+/*
 .social h5 {
 	display:block;
 	margin-top:-5%;
 	font-family:'Indie Flower',cursive;
 	color:#000;
 }
+*/
 
 .social img {
 	margin-left:2%;
+	top: 2%;
+    position: absolute;
 }
 
 .social_likes p,span {
@@ -179,6 +183,7 @@ body {
 .entries-img img {
 	max-height:350px;
 	border:0 none;
+	margin-left: -1%;
 }
 
 .entries-likes {
@@ -256,14 +261,13 @@ body {
 }
 
 .ad h1  {
-	display:inline;
-	margin:0 auto;
+	text-align: center;
 	color:#95A5A6;
-	padding:2%;
 }
 
 .ad p  {
 	color:#95A5A6;
+	text-align: center;
 }
 
 .entries-desc h4 {
@@ -273,6 +277,13 @@ body {
 	color:#95A5A6;
 /* color: #000; */
 	position:relative;
+	font-family:'Indie Flower',cursive;
+}
+
+.entries-desc h5 {
+	display:block;
+	text-align:left;
+	color:#95A5A6;
 	font-family:'Indie Flower',cursive;
 }
 
@@ -478,13 +489,15 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 
 .profile-user {
 	display:block;
-	border-radius:0 20px;
 	text-align:CENTER;
 	font-size:25px;
-	background-color:#D24D57;
+	background-color:#674172;
 	color:#fff;
-	width:35%
-/* opacity: 0.7; */
+	width:100%;
+	position:fixed;
+	top: 8%;
+	clear: both;
+	margin-bottom: 10%;
 }
 
 .post {
