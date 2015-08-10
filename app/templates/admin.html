@@ -2,7 +2,9 @@
 {% block body %}
 
  {% if current_user.is_authenticated() %}
- 
+
+<div class="container"> 
+<div class="row"> 
 	<div class="cd-panel from-left">
 		<header class="cd-panel-header">
 			<h1>Analytics |</h1><h3>{{ time }}</h3>
@@ -68,6 +70,7 @@
 			<button type="submit" value="submit">Submit</button><br />	
 		</form>
 	</div>
-	
+</div><!-- /row -->	
+</div><!-- /container -->	
   {% endif %}
 {% endblock %}

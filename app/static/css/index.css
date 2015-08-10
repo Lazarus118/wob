@@ -4,6 +4,64 @@
 
 @import "http://fonts.googleapis.com/css?family=Indie+Flower";
 
+
+.test {
+	display:block;
+	position: fixed;
+	width: 35%;
+	height: 30%;
+	background: #fff;
+	float: right;
+	clear: both;
+	bottom: 0%;
+	right: 0%;
+	border-radius: 10px 0px 0px 0px;
+	z-index: 9999;
+}
+
+.test h2 {
+	margin: 0px auto;
+	color: #000;
+	text-align: center;
+	font-size: 2em;
+	font-family:'Open Sans Condensed',sans-serif;
+}
+
+.test p {
+	margin: 0px auto;
+	color: #000;
+	text-align: center;
+	font-size: 1.5em;
+	font-family:'Open Sans Condensed',sans-serif;
+}
+
+.test input {
+	border:none;
+	display:block;
+	width:100%;
+	height: 20%;
+	bottom:0;
+	clear:both;
+	background:#ECF0F1;
+}
+
+.test input[placeholder] {
+	color:#000;
+	font-size: 2em;
+	text-align: center;
+}
+
+.test button {
+	border:none;
+	display:block;
+	background:#F64747;
+	bottom:0;
+	width:100%;
+	height: 30px;
+	color: #fff;
+}
+
+
 body {
 	padding-top:60px;
 /* 60px to make the container go all the way to the bottom of the topbar */
@@ -268,6 +326,11 @@ body {
 .ad p  {
 	color:#95A5A6;
 	text-align: center;
+}
+
+.ad img {
+	text-align: center;
+	position: relative;
 }
 
 .entries-desc h4 {

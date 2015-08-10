@@ -7,8 +7,45 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	margin:0
 }
 
+
+/* Test
+ * -------------------------------------- */ 
+.test {
+	display:block;
+	position: absolute;
+	width: 35%;
+	height: 35%;
+	background: #000;
+	float: right;
+	clear: both;
+	right: 0%;
+	border-radius: 0px 0px 0px 10px;
+	z-index: 9999;
+}
+
+.test h2 {
+	margin: 0px auto;
+	color: #fff;
+	text-align: center;
+	font-size: 3em;
+	font-family:'Open Sans Condensed',sans-serif;
+}
+
+.test p {
+	margin: 0px auto;
+	color: #fff;
+	text-align: center;
+	font-size: 1.5em;
+	font-family:'Open Sans Condensed',sans-serif;
+}
+
+.test span {
+	color: #FDE3A7;
+}
+/* -------------------------------------- */
+
 /* NEW STYLE
- * -------------------------------------- */
+ * -------------------------------------- */ 
 #section0 {
 	background-image:url(/static/img/beach.jpg);
 	background-size:cover;
@@ -308,10 +345,10 @@ input[type=checkbox] {
 }
 
 .sign_up h4:nth-of-type(2n) {
-	float: right;
+	float: left;
 	color: #fff;
-	margin-right: 2%;
-	margin-top: 2;
+	margin-left: 2%;
+	margin-top: 2%;
 }
 
 .slideOne label {
@@ -352,7 +389,62 @@ input[type=checkbox] {
 
 /******************************/
 
+/******* SLIDE TWO *******/
 
+.slideTwo {
+	width: 50px;
+	height: 10px;
+	background: #FDE3A7;
+	margin: 20px auto;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+
+.slideTwo label {
+	display: block;
+	width: 16px;
+	height: 16px;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+	cursor: pointer;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	background: #fcfff4;
+
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.slideTwo input[type=checkbox]:checked + label {
+	left: 37px;
+}
+
+/******************************/
 a {
 	text-decoration:none
 }

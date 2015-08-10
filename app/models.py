@@ -8,10 +8,12 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(20), index=True, unique=True)
 	password = db.Column(db.String(64), index=True)
-	email = db.Column(db.String(64), index=True, unique=True)
-	number = db.Column(db.String(20), index=True, unique=True)
-	#retailer = db.Column(db.String(10), index=True, unique=True)
+	email = db.Column(db.String(64), index=True)
+	number = db.Column(db.String(64), index=True)
+	user = db.Column(db.String(10), index=True)
+	retailer = db.Column(db.String(10), index=True)
 	comment = db.relationship('Comments', backref='user', cascade="all, delete-orphan", lazy='dynamic')
+	
 
 	
 	def is_authenticated(self):
@@ -26,10 +28,15 @@ class User(db.Model):
 		return unicode(self.id)
 	def __repr__(self):
 		return '<User %r>' % (self.username)
-	def __init__(self, comment, number):
+	
+	def __init__(self, email, number, comment, user, retailer):
+		self.email = email
+		self.number = number
 		self.comment = comment
-		self.number = number 	
-		
+		self.user = user
+		self.retailer = retailer	
+	
+	
 #*************************************************************************************#
 # //Comments database class 
 #*************************************************************************************#		
@@ -60,15 +67,15 @@ class Image(db.Model):
 	photo_description = db.Column(db.Unicode(64))
 	photo_filename = db.Column(db.Unicode(128))
 	uploaded_at = db.Column(db.DateTime)
-	company = db.Column(db.String(64), index=True)
+	#company = db.Column(db.String(64), index=True)
 	price = db.Column(db.String(12), index=True)
 	amount = db.Column(db.String(100), index=True)
 	size = db.Column(db.String(50), index=True)
 
-	def __init__(self, photo_description, photo_filename, company, price, amount, size, uploaded_at):	
+	def __init__(self, photo_description, photo_filename, price, amount, size, uploaded_at):	
 		self.photo_description = photo_description
 		self.photo_filename = photo_filename
-		self.company = company
+		#self.company = company
 		self.price = price
 		self.amount = amount
 		self.size = size 

@@ -3,7 +3,7 @@
 
    {% if current_user.is_authenticated() %} 
   <div class="profile-user">
-	<p>*{{ name.username }}*</p>
+	<p>*{{ name.username }}'s profile*</p>
   </div>
 <!-- 
   <div class="post">
@@ -15,7 +15,19 @@
   </div>	
 -->  
 
-  
+<!-- ****************************************** -->
+<!-- //Test//                                   -->
+<!-- ****************************************** -->
+<div class="test">
+	<h2 align="CENTER">Help us make Wob a reality.</h2>
+	<p>Enter your email below to find out more</p><br />
+	<form method="POST" action="{{ url_for('test') }}">
+		<input type="text" name="test" placeholder="email@domain.com"></input>
+		<button type="submit">Submit</button>
+	</form>
+</div>  
+
+
 	<div class="prods-cnt">
 	<!--
 		<div class="category-menu">
@@ -70,4 +82,32 @@
   
    {% endif %}
   
-{% endblock %}  
+<!-- ****************************************************************************************** -->
+<!-- // Test //                                                                                 -->
+<!-- ****************************************************************************************** -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
+<script src="{{ url_for('static', filename = 'js/jquery.spotlight.js') }}"></script>
+<script>
+$('.test').spotlight({
+	opacity: .7,				//spotlight opacity
+	speed: 400,					//animateion speed
+	color: '#000',				//spotlight colour
+	animate: true,				//enable animation (if false 'speed' and 'easing' are irrelevant)
+	easing: '',					//set easing from the jQuery Easing plugin
+	exitEvent: 'click',		//set which event triggers spotlight to hide 
+									//(must be a valid jQuery 'live' event type)
+	onShow: function(){},	//callback function after spotlight is shown
+	onHide: function(){}		//callback function after spotlight is hidden
+});
+
+$(document).ready(function(){
+	
+	$('a.test').click(function(){
+		$('.test').spotlight();
+	});
+});
+</script>  
+  
+{% endblock %} 
+

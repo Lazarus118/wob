@@ -22,4 +22,6 @@ class signupForm(form.Form):
 	password = fields.TextField('password', validators=[validators.DataRequired()])
 	email = fields.TextField('email', validators=[validators.DataRequired()])
 	number = fields.TextField('number', validators=[validators.DataRequired()])
-	#retailer = fields.BooleanField('check', default=False)
+	user = fields.TextField('user', validators=[validators.DataRequired()])
+	retailer = fields.TextField('retailer', validators=[validators.DataRequired()])
+	

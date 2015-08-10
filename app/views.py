@@ -73,7 +73,18 @@ def add():
 		db.session.commit()
 		flash('New entry was successfully posted')
 	return redirect(url_for('main'))
-		
+
+
+@app.route('/test', methods=['GET', 'POST'])
+def test():
+	test_form = request.form['test']
+	
+	if request.method == 'POST':
+		text_file = open('emails.txt', 'a')
+		text_file.write('\n %s,' % test_form )
+		text_file.close()	
+	return redirect(url_for('index'))	
+	
 #***********************************************************************#
 # // MAIN //
 #***********************************************************************#
@@ -130,20 +141,36 @@ def login():
 #***********************************************************************#
 # // SIGNUP //
 #***********************************************************************#
+'''
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	form = signupForm(request.form)
 	if request.method == 'POST':
 		enter_signup = User(request.form['username'],
-							request.form['password'],
-							request.form['email'],
-							request.form['number'])
-							#request.form['check'])
+				    request.form['password'],
+				    request.form['email'],
+				    request.form['number'],
+				    request.form['check'])
 		db.session.add(enter_signup)
 		db.session.commit()
 		return redirect(url_for('index'))
 	return render_template('sign_up.html')
+'''
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+	
+	form = signupForm(request.form)
+	user = request.form['user']
+	retailer = request.form['retailer']
+	
+	if request.method == 'POST':
+		if user == 'checked':
+			user == 'user' 
+		elif retailer == 'checked': 
+			retailer == 'retailer'
 		
+	return render_template('test.html', user=user, retailer=retailer)
 
 #***********************************************************************#
 # // LOGOUT //
@@ -166,7 +193,7 @@ def allowed_file(filename):
 
 #***********************************************************************#
 
-@app.route('/admin/')
+@app.route('/admin/', methods=['GET', 'POST'])
 def admin():
 	delete = deleted()
 	form = adminForm(request.form)
@@ -185,16 +212,17 @@ def admin():
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			
-		path = '/static/img/'
-		form = Image(request.form['photo_description'], path + filename,
-					 request.form['company'],
-					 request.form['price'],
-					 request.form['amount'])
-		db.session.add(form)
-		db.session.commit()
-		return redirect(url_for('admin'))
+			path = '/static/img/'
+			form = Image(request.form['photo_description'], 
+						 path + filename,
+						 request.form['size'],
+						 request.form['price'],
+						 request.form['amount'],
+						 time)
+			db.session.add(form)
+			db.session.commit()
+			return redirect(url_for('admin'))
 			
-	
 	return render_template('admin.html',
 	like=like, 
 	post=post, 

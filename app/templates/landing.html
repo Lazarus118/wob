@@ -40,6 +40,16 @@
 </head>
 <body>
 
+<!-- ****************************************** -->
+<!-- //Test//                                   -->
+<!-- ****************************************** -->
+<div class="test">
+	<h2 align="CENTER">Welcome to WOB!</h2>
+	<p>To browse the site enter your Free account below.</p><br />
+	<p>Username: <span>test</span></p>
+	<p>Password: <span>test</span></p>
+	
+</div>
 
 <div id="fullpage">
     
@@ -79,15 +89,23 @@
 				<input type="text" name="email" placeholder="Email" required="required"></input>
 				<input type="text" name="number" placeholder="Cell: 1(767)555-555" required="required"></input><br />
 				
-				<!-- **** Slide ONE **** 
+				<!-- **** Slide ONE **** -->
 				<hr>
-				<h4>USER</h4> <h4>RETAILER</h4>
-				  
+				<h4>USER</h4>
+				 
 					<div class="slideOne">
-						<input type="checkbox" value="1" id="slideOne" name="check" />
+						<input type="checkbox" value="checked" id="slideOne" name="user" />
 						<label for="slideOne"></label>
 					</div>
-				   ******************* -->
+				<!--  ******************* -->
+				<h4>RETAILER</h4>
+				
+				<!-- **** Slide TWO **** -->	
+					<div class="slideTwo">
+						<input type="checkbox" value="checked" id="slideTwo" name="retailer" />
+						<label for="slideTwo"></label>
+					</div>
+				<!--  ******************* -->
 				
 				<button type="submit">Sign up</button><h3>or</h3><a href="javascript:void(0)"><h5>Login</h5></a> 
 			</form>
@@ -169,6 +187,34 @@ $(".sign_up").css("visibility", "hidden");
 		$(".sign_up").css("visibility", "hidden");
 	});
 });	
+</script>
+
+<!-- ****************************************************************************************** -->
+<!-- // Test //                                                                                 -->
+<!-- ****************************************************************************************** -->
+<script type="text/javascript" src="../static/js/jquery.spotlight.js"></script>
+<script>
+$('.enter').spotlight({
+	opacity: .7,				//spotlight opacity
+	speed: 400,					//animateion speed
+	color: '#000',				//spotlight colour
+	animate: true,				//enable animation (if false 'speed' and 'easing' are irrelevant)
+	easing: '',					//set easing from the jQuery Easing plugin
+	exitEvent: 'click',		//set which event triggers spotlight to hide 
+									//(must be a valid jQuery 'live' event type)
+	onShow: function(){},	//callback function after spotlight is shown
+	onHide: function(){}		//callback function after spotlight is hidden
+});
+
+$(document).ready(function(){
+
+	$('.test').show();
+
+	//$('a.enter').click(function(){
+		$('.enter').spotlight();
+	//});
+
+});
 </script>
 
 <!-- ****************************************************************************************** -->
