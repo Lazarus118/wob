@@ -8,7 +8,7 @@
 .test {
 	display:block;
 	position: fixed;
-	width: 35%;
+	width: 45%;
 	height: 30%;
 	background: #fff;
 	float: right;
@@ -366,17 +366,19 @@ body {
 }
 
 .alert {
-	display:block;
-	border:medium none;
-	opacity:.4;
-	background-color:#F62459;
-	color:#FFF;
-	top:1%;
-	width:45%;
-	position:fixed;
-	height:3%;
-	left:28%;
-	z-index:1000;
+	display: block;
+	border: medium none;
+	opacity: 0.4;
+	background-color: #F62459;
+	top: 1%;
+	width: 35%;
+	position: fixed;
+	height: 5%;
+	left: 28%;
+	z-index: 1000;
+	color: #FFF;
+	text-shadow: none;
+	font-weight: 700;
 }
 
 .wrapper {
