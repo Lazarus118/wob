@@ -1,5 +1,5 @@
 /venv
-/db
+/db/app.db
 /db_repository
 /app/forms.pyc
 /app/__init__.pyc
