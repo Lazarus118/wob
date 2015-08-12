@@ -80,7 +80,7 @@ def test():
 	test_form = request.form['test']
 	
 	if request.method == 'POST':
-		text_file = open('emails.txt', 'a')
+		text_file = open('/var/www/wob/email_entries.txt', 'a')
 		text_file.write('\n %s,' % test_form )
 		text_file.close()	
 	return redirect(url_for('index'))	
