@@ -12,7 +12,6 @@ class LikeForm(form.Form):
 	
 class adminForm(form.Form):
 	photo_description = fields.TextField('photo_description')
-	company = fields.TextField('company')
 	price = fields.TextField('price')
 	amount = fields.TextField('amount')
 	size = fields.TextField('size')

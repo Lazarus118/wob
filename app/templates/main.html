@@ -34,7 +34,7 @@
 		<!-- <h6 align="center">By ~ {{ image.company }}</h6> -->
 
 	
-				<h6 align="center">By ~ {{ username }}</h6>
+				<h6 align="center">By ~ {{ image.user.username }}</h6>
 
 
 		<hr>
@@ -65,7 +65,7 @@
 		<article>	
 		<div class="social_comments">
 		{% for items in social %} 
-			<p>Admirer Jane: {{ items.comments }}</p>
+			<p>{{ items.user.username }}: {{ items.comments }}</p>
 		{% endfor %}
 		</div>
 		</article>

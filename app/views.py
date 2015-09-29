@@ -37,7 +37,10 @@ def index():
 @app.route('/soon')
 def soon():
         return render_template('soon.html')		
-		
+
+#***********************************************************************#
+# // Message_sent //
+#***********************************************************************#
 @app.route('/message_sent', methods=['POST'])
 def message_sent():
 	message = request.args.get('message')
@@ -45,7 +48,9 @@ def message_sent():
 	flash('Message sent to Supplier!')
 	return redirect(url_for('main'))
 	
-	
+#***********************************************************************#
+# // Liked //
+#***********************************************************************#
 @app.route('/liked', methods=['GET', 'POST'])
 def liked():
 
@@ -56,7 +61,9 @@ def liked():
 		flash('Thanks for the admiration!')
 	return redirect(url_for('main'))
 
-
+#***********************************************************************#
+# // Deleted //
+#***********************************************************************#
 @app.route('/deleted', methods=['GET', 'POST'])
 def deleted():
 
@@ -64,17 +71,21 @@ def deleted():
 		Image.query.filter(Image.id == 123).delete()
 	return redirect(url_for('admin'))	
 
-	
+#***********************************************************************#
+# // Add //
+#***********************************************************************#
 @app.route('/add', methods=['GET', 'POST'])
 def add():
 	if request.method == 'POST':
-		comment = Comments(request.form['comments'])
+		comment = Comments(request.form['comments'], current_user.id )
 		db.session.add(comment)
 		db.session.commit()
-		flash('New entry was successfully posted')
+		flash('New comment was successfully posted')
 	return redirect(url_for('main'))
 
-
+#***********************************************************************#
+# // Test //
+#***********************************************************************#
 @app.route('/test', methods=['GET', 'POST'])
 def test():
 	test_form = request.form['test']
@@ -211,17 +222,18 @@ def admin():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-			
 			path = '/static/img/'
+			
 			form = Image(request.form['photo_description'], 
 						 path + filename,
-						 request.form['size'],
-						 request.form['price'],
 						 request.form['amount'],
-						 time)
+						 request.form['price'],
+						 request.form['size'],
+						 time,
+						 current_user.id)
 			db.session.add(form)
 			db.session.commit()
-			return redirect(url_for('admin'))
+		return redirect(url_for('main'))
 			
 	return render_template('admin.html',
 	like=like, 

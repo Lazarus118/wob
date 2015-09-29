@@ -209,12 +209,12 @@ body {
 }
 
 .social_comments p {
-	color:#ABB7B7;
+	color:#95A5A6;
 	font-size:15px;
 }
 
 .social input {
-	border:none;
+	/* border:none; */
 	display:block;
 	width:90%;
 	bottom:0;
@@ -223,8 +223,8 @@ body {
 }
 
 .social input[placeholder] {
-	color:#95A5A6;
-	font-size:18px;
+	color:#ABB7B7;
+	font-size:16px;
 }
 
 .social button {
@@ -308,8 +308,8 @@ body {
 
 .ad {
 	display:block;
-	width:20%;
 	height:40%;
+	max-width:175px;
 	background:#fff;
 	position:fixed;
 	z-index:999;
@@ -331,6 +331,8 @@ body {
 .ad img {
 	text-align: center;
 	position: relative;
+	padding: 5%;
+	max-width:175px;
 }
 
 .entries-desc h4 {
