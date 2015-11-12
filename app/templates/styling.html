@@ -10,6 +10,14 @@
     </ul>
 </div>
 
+<div class="banner2">
+    <ul>
+        <li><div id="amber"></div></li>
+        <li><div id="purple"></div></li>
+        <li><div id="yellow"></div></li>
+    </ul>
+</div>
+
 <div class="unslider-arrow prev" id="previous"><a href="#"><img src="/static/img/prev.png"></a></div>
 <div class="unslider-arrow next" id="next"><a href="#"><img src="/static/img/next.png"></a></div>
 
@@ -19,13 +27,14 @@
 $(function() {
     $('.banner').unslider();
 	speed: 500,               //  The speed to animate each slide (in milliseconds)
-	delay: 3000,              //  The delay between slide animations (in milliseconds)
+	delay: 0,              //  The delay between slide animations (in milliseconds)
 	complete: function() {},  //  A function that gets called after every slide animation
 	keys: true,               //  Enable keyboard (left, right) arrow shortcuts
 	dots: false,               //  Display dot navigation
 	fluid: false              //  Support responsive design. May break non-responsive designs
 	
 });
+
 
 var slidey = $('.banner').unslider(),
     data = slidey.data('unslider');

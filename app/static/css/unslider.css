@@ -1,11 +1,28 @@
 .banner { 
-  margin-top: 20%;
-  margin-left: 20%; 
+  display: block;	
   margin: auto;
   padding: 10px;
+  text-align: center;
+  position: relative;
 }
+
 .banner li { list-style: none; }
 .banner ul li { float: left; }
+
+/*****************************/
+
+.banner2 { 
+  display: block;	
+  margin: auto;
+  padding: 10px;
+  top: 50%;
+  text-align: center;
+  position: relative;
+}
+
+.banner2 li { list-style: none; }
+.banner2 ul li { float: left; }
+
 
 #previous {
 display: block;
@@ -22,8 +39,9 @@ margin-right: 2%;
 #red {
 display: block;
 position: relative;
-width: 1000px;
+width: 80%;
 height: 250px;
+margin: auto;
 text-align: center;
 background: red;
 }
@@ -31,8 +49,9 @@ background: red;
 #blue {
 display: block;
 position: relative;
-width: 1000px;
+width: 80%;
 height: 250px;
+margin: auto;
 text-align: center;
 background: blue;
 }
@@ -40,8 +59,39 @@ background: blue;
 #green {
 display: block;
 position: relative;
-width: 1000px;
+width: 80%;
 height: 250px;
+margin: auto;
 text-align: center;
 background: green;
+}
+
+#amber {
+display: block;
+position: relative;
+width: 80%;
+height: 250px;
+margin: auto;
+text-align: center;
+background: amber;
+}
+
+#purple {
+display: block;
+position: relative;
+width: 80%;
+height: 250px;
+margin: auto;
+text-align: center;
+background: purple;
+}
+
+#yellow {
+display: block;
+position: relative;
+width: 80%;
+height: 250px;
+margin: auto;
+text-align: center;
+background: yellow;
 }

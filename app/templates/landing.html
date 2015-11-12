@@ -30,10 +30,21 @@
 	<script type="text/javascript" src="../static/js/jquery.jMosaic.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
+		
 			$('#fullpage').fullpage({
 				autoScrolling: false,
 				slidesColor: ['#000000', '#fff', '#F2F1EF']
-				});
+				
+				
+				//afterRender: function(){
+				
+					//setting the size
+					//$('video').height($(window).height());
+					
+					//playing the video
+					//$('video').get(0).play();
+				//},
+			});
 		});
 	</script>
 
@@ -42,14 +53,14 @@
 
 <!-- ****************************************** -->
 <!-- //Test//                                   -->
-<!-- ****************************************** -->
+<!-- ****************************************** 
 <div class="test">
 	<h2 align="CENTER">Welcome to WOB!</h2>
 	<p>To browse the site enter your Free account below.</p><br />
 	<p>Username: <span>test</span></p>
 	<p>Password: <span>test</span></p>
-	
 </div>
+-->
 
 <div id="fullpage">
     
@@ -60,17 +71,24 @@
 	<!-- ****************************************************************************************** -->
 	<div class="section active" id="section0">
 	
+	<div class="mission">
+		<img src="/static/img/logo-mark-landing.png"  />
+		<h3>Your go-to place for local fashion</h3>
+	</div>
+	
+	<!--
+	<video autoplay loop muted style="height: 334px;">
+			<source src="imgs/flowers.mp4" type="video/mp4">
+			<source src="imgs/flowers.webm" type="video/webm">
+	</video>
+	-->
+	
 <!-- ****************************************************************************************** -->
 <!-- // Facebook page plugin // 
 <!-- ****************************************************************************************** -->
 <div class="facebook-plugin">
 	<div class="fb-page" data-href="https://www.facebook.com/wob.dm" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/wob.dm"><a href="https://www.facebook.com/wob.dm">Facebook</a></blockquote></div></div>		
 </div>		
-
-		<div class="mission">
-			<img src="/static/img/logo-mark-landing.png"  />
-			<h3>Your go-to place for local fashion</h3>
-		</div>
 		
 		<div class="enter">
 			<form method="post" action="{{ url_for('login') }}">
