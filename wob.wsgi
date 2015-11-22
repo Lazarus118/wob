@@ -1,5 +1,5 @@
 #!/usr/bin/python
-activate_this = '/var/www/wob/venv/bin/activate_this.py'
+activate_this = '/wob/venv/bin/activate_this.py'
 execfile(activate_this, dict(__file__=activate_this))
 
 
