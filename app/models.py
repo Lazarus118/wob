@@ -15,8 +15,9 @@ class User(db.Model):
 	password = db.Column(db.String(64), index=True)
 	email = db.Column(db.String(64), index=True)
 	number = db.Column(db.String(64), index=True)
-	individual = db.Column(db.String(10), index=True)
-	retailer = db.Column(db.String(10), index=True)
+	user_option = db.Column(db.String(64), index=True)
+	#individual = db.Column(db.String(10), index=True)
+	#retailer = db.Column(db.String(10), index=True)
 	
 	#*********************************************************************#
 	# // Database relational link for Comments
@@ -42,11 +43,12 @@ class User(db.Model):
 	def __repr__(self):
 		return '<User %r>' % (self.username)
 	
-	def __init__(self, email, number, individual, retailer):
+	def __init__(self, username, password, email, number, user_option):
+		self.username = username
+		self.password = password
 		self.email = email
 		self.number = number
-		self.individual = individual
-		self.retailer = retailer	
+		self.user_option = user_option
 	
 	
 #*************************************************************************************#

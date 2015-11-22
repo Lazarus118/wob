@@ -21,6 +21,7 @@ class signupForm(form.Form):
 	password = fields.TextField('password', validators=[validators.DataRequired()])
 	email = fields.TextField('email', validators=[validators.DataRequired()])
 	number = fields.TextField('number', validators=[validators.DataRequired()])
-	user = fields.TextField('user', validators=[validators.DataRequired()])
-	retailer = fields.TextField('retailer', validators=[validators.DataRequired()])
+	user_option = fields.TextField('user_option', validators=[validators.DataRequired()])
+	#user = fields.TextField('user', validators=[validators.DataRequired()])
+	#retailer = fields.TextField('retailer', validators=[validators.DataRequired()])
 	

@@ -94,7 +94,15 @@ def test():
 		text_file = open('/var/www/wob/email_entries.txt', 'a')
 		text_file.write('\n %s,' % test_form )
 		text_file.close()	
-	return redirect(url_for('index'))	
+	return redirect(url_for('index'))
+
+#***********************************************************************#
+# // Sign up waiting //
+#***********************************************************************#
+@app.route('/waiting...')
+def waiting():
+        return render_template('waiting.html')
+		
 	
 #***********************************************************************#
 # // MAIN //
@@ -152,7 +160,6 @@ def login():
 #***********************************************************************#
 # // SIGNUP //
 #***********************************************************************#
-'''
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	form = signupForm(request.form)
@@ -161,13 +168,13 @@ def signup():
 				    request.form['password'],
 				    request.form['email'],
 				    request.form['number'],
-				    request.form['check'])
+				    request.form['user_option'])
 		db.session.add(enter_signup)
 		db.session.commit()
-		return redirect(url_for('index'))
+		return redirect(url_for('waiting'))
 	return render_template('sign_up.html')
-'''
 
+'''
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	
@@ -182,7 +189,7 @@ def signup():
 			retailer == 'retailer'
 		
 	return render_template('test.html', user=user, retailer=retailer)
-
+'''
 #***********************************************************************#
 # // LOGOUT //
 #***********************************************************************#		

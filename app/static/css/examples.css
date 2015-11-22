@@ -47,11 +47,25 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 /* NEW STYLE
  * -------------------------------------- */ 
 #section0 {
+	
 	background-image:url(/static/img/beach.jpg);
 	background-size:cover;
 	background-repeat:no-repeat;
-	background-position:50% center
+	background-position:50% center;
+	z-index: 800;
 /* min-height: 716px; */
+}
+
+video {
+	/* position: fixed; */
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+	background-size: cover;
 }
 
 #section0 img {
@@ -75,12 +89,14 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	position:absolute;
 	opacity:.9;
 	clear:both;
-	bottom:0
+	bottom:0;
 }
 
 .facebook-plugin {
 	display:block;
-	float:right
+	float:right;
+	clear: both;
+	position: relative;
 }
 
 .landing-desc {
@@ -153,13 +169,11 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	position:absolute;
 	z-index:1000;
 	width:100%;
-	height:5%;
-	top:0
-/*
-	border-bottom: 2px solid #674172;
+	height:2%;
+	top:0;
+	/* border-bottom: 2px solid #674172; */
 	opacity: 0.8;
-	background: #663399;
-	*/
+	background: #350e35;
 }
 
 .header h2 {
@@ -170,16 +184,27 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	font-weight: 700;
 }
 
-.mission  h3{
+.header h3 {
+	padding:15px;
+	float: right;
+	color: #fff;
+	top: -4%;
+	font-size:12px;
+	font-style: italic;
+    font-weight: 700;
+}
+
+.mission h3 {
   color: #E74C3C;
   background: #fff;
   font-size: 20px;
   font-weight: 500;
   font-family: 'Indie Flower', cursive;
   display: block;
-  margin-top: -7%;
-  margin-left: 20%;
+  margin-top: -15%;
+  margin-left: 34%;
   clear: both;
+  padding: 4px;
   position: absolute;
 }
 
@@ -187,7 +212,8 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 	width: 90px;
 	height: 91px;
 	margin-left: 27%;
-    top: 4%;
+    top: 8%;
+	z-index: 2000;
     position: absolute;
 }
 
@@ -209,7 +235,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
   border: 0 none;
   border-radius: 2px;
   padding: .66em .95em;
-  font-size: 16px;
+  font-size: 12px;
   background: #FDE3A7;
   position: relative;
   width: 60%;
@@ -238,10 +264,50 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 }
 
 .enter h5, a {
-	color: #fff;
+	color:#F22613;
 	text-decoration: none;
 	font-weight: 700;
 	margin-left: -2%;
+}
+
+/**************************************
+/ Input styling 
+**************************************/
+input[type="text"]::-moz-placeholder {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+input[type="text"]:-ms-input-placeholder {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+input[type="text"]::-webkit-input-placeholder {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+
+input[type="password"]::-moz-placeholder {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+input[type="password"]:-ms-input-placeholder {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+input[type="password"]::-webkit-input-placeholder {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+textarea {
+  font-style: italic;
 }
 
 .sign_up {
@@ -263,10 +329,18 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
   border: 0 none;
   border-radius: 2px;
   padding: .66em .95em;
-  font-size: 16px;
+  font-size: 12px;
   background: #FDE3A7;
   position: relative;
   width: 60%;
+}
+
+.sign_up textarea {
+	display: inline-block;
+	border:1px solid grey;
+	background:none;
+	color: #fff;
+	position: relative;
 }
 
 .sign_up  button {
@@ -292,7 +366,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 }
 
 .sign_up  h5, a {
-	color: #fff;
+	color:#F22613;
 	text-decoration: none;
 	font-weight: 700;
 	margin-left: -2%;
@@ -442,6 +516,16 @@ input[type=checkbox] {
 
 .slideTwo input[type=checkbox]:checked + label {
 	left: 37px;
+}
+
+.user_option p {
+	display: block;
+	font-size: 15px;
+	position: absolute;
+}
+
+.form-required {
+	color: red;
 }
 
 /******************************/

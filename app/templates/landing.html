@@ -1,8 +1,7 @@
 {% block body %}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 	<title>Wob</title>
@@ -43,7 +42,7 @@
 					
 					//playing the video
 					//$('video').get(0).play();
-				//},
+				//}
 			});
 		});
 	</script>
@@ -66,6 +65,8 @@
     
 	<div class="header">
 		<h2>WOB</h2>
+		<h3><img src="/static/img/email.png" width="24px" height="24px"/>contact@wob.fashion</h3>
+		<h3><img src="/static/img/whatsapp.png" width="24px" height="24px"/>1767-614-4347</h3>
 	</div>
 	
 	<!-- ****************************************************************************************** -->
@@ -77,9 +78,10 @@
 	</div>
 	
 	<!--
-	<video autoplay loop muted style="height: 334px;">
-			<source src="imgs/flowers.mp4" type="video/mp4">
-			<source src="imgs/flowers.webm" type="video/webm">
+	*************** TO DO **************
+	
+	<video autoplay loop muted>
+			<source src="/static/video/2.mp4" type="video/mp4">
 	</video>
 	-->
 	
@@ -102,23 +104,24 @@
 		
 		<div class="sign_up">
 			<form method="post" action="{{ url_for('signup') }}">
-				<input type="text" name="username" placeholder="Username" required="required"></input>
+				<input type="text" name="username" placeholder="Username" required="required" ></input>
 				<input type="password" name="password" placeholder="Password" required="required"></input>
 				<input type="text" name="email" placeholder="Email" required="required"></input>
 				<input type="text" name="number" placeholder="Cell: 1(767)555-555" required="required"></input><br />
-				
-				<!-- **** Slide ONE **** -->
+				<textarea autofocus rows="4" cols="0" name="user_option" placeholder="Are you a USER or CLOTHING SUPPLIER?" required="required"></textarea>
 				<hr>
+				<!-- **** Slide ONE **** -->
+				<!--
 				<h4>USER</h4>
 				 
 					<div class="slideOne">
 						<input type="checkbox" value="checked" id="slideOne" name="user" />
 						<label for="slideOne"></label>
 					</div>
-				<!--  ******************* -->
+				<!--  ******************* 
 				<h4>RETAILER</h4>
 				
-				<!-- **** Slide TWO **** -->	
+				<!-- **** Slide TWO **** 	
 					<div class="slideTwo">
 						<input type="checkbox" value="checked" id="slideTwo" name="retailer" />
 						<label for="slideTwo"></label>
@@ -209,7 +212,7 @@ $(".sign_up").css("visibility", "hidden");
 
 <!-- ****************************************************************************************** -->
 <!-- // Test //                                                                                 -->
-<!-- ****************************************************************************************** -->
+<!-- ****************************************************************************************** 
 <script type="text/javascript" src="../static/js/jquery.spotlight.js"></script>
 <script>
 $('.enter').spotlight({
@@ -234,11 +237,18 @@ $(document).ready(function(){
 
 });
 </script>
+-->
 
 <!-- ****************************************************************************************** -->
 <!-- // Clicky.com Analytics // 
-<!-- ****************************************************************************************** -->
-<a title="Real Time Analytics" href="http://clicky.com/100859888"><img alt="Real Time Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+<!-- ****************************************************************************************** 
+
+<a title="Real Time Analytics" href="http://clicky.com/100859888">
+<img alt="Real Time Analytics" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a>
+
+-->
+
+
 <script type="text/javascript">
 var clicky_site_ids = clicky_site_ids || [];
 clicky_site_ids.push(100859888);
@@ -250,8 +260,13 @@ clicky_site_ids.push(100859888);
   ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
 })();
 </script>
+
+
+<!-- 
+
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100859888ns.gif" /></p></noscript>
-<!-- ****************************************************************************************** -->
+
+****************************************************************************************** -->
 <!-- // Clicky.com Analytics // 
 <!-- ****************************************************************************************** -->
 </body>
