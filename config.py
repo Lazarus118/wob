@@ -12,3 +12,15 @@ SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 # Used for WTForms
 CSRF_ENABLED = True
 SECRET_KEY = "justAs1mPl3K3yzT0t357"
+
+# Configuration for Email 
+
+MAIL_SERVER = 'smtp.gmail.com'
+MAIL_PORT = 587
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+MAIL_USERNAME = os.environ.get('austin.lazarus@gmail.com')
+MAIL_PASSWORD = os.environ.get('GetFitAustin')
+
+# administrator list
+ADMINS = ['austin.lazarus@gmail.com']

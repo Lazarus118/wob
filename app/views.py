@@ -163,6 +163,23 @@ def login():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	form = signupForm(request.form)
+	form_data = {request.form['username'],
+				 request.form['password'],
+				 request.form['email'],
+				 request.form['number'],
+				 request.form['user_option']}
+	
+	if request.method == 'POST':
+	
+		#For Server
+		text_file = open('/var/www/wob/signup_entries.txt', 'a')
+		#For Local
+		#text_file = open('email_entries.txt', 'a')
+		
+		text_file.write('\n %s' % form_data )
+		text_file.close()
+		return redirect(url_for('waiting'))
+	'''
 	if request.method == 'POST':
 		enter_signup = User(request.form['username'],
 				    request.form['password'],
@@ -171,7 +188,9 @@ def signup():
 				    request.form['user_option'])
 		db.session.add(enter_signup)
 		db.session.commit()
-		return redirect(url_for('waiting'))
+		
+	'''	
+		
 	return render_template('sign_up.html')
 
 '''

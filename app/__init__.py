@@ -1,18 +1,18 @@
 from flask import Flask
-#SQLAlchemy import
 from flask.ext.sqlalchemy import SQLAlchemy
-# MongoAlcemy import 
-# from flask.ext.mongoalchemy import MongoAlchemy
-# LoginManager is needed for the login process
+
 from flask.ext.login import LoginManager
+from flask.ext.mail import Mail
+
 
 app = Flask(__name__)
 app.config.from_object('config')
+mail = Mail(app)
+
 # Setup SQLAlchemy for the project
 db = SQLAlchemy(app)
-# Setup MongoAlchemy
-#db = MongoAlchemy(app)
 
+# LoginManager is needed for the login process
 lm = LoginManager()
 lm.session_protection = "strong"
 lm.setup_app(app)
