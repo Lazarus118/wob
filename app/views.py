@@ -270,7 +270,12 @@ def admin():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-			path = '/static/img/'
+			
+			# // FOR LOCAL HOST ///
+			#path = '/static/img/'
+			
+			# // FOR SERVER //
+			path = '/var/www/wob/static/img/'
 			
 			form = Image(request.form['photo_description'], 
 						 path + filename,
