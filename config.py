@@ -14,13 +14,13 @@ CSRF_ENABLED = True
 SECRET_KEY = "justAs1mPl3K3yzT0t357"
 
 # Configuration for Email 
-
+DEBUG = True
 MAIL_SERVER = 'smtp.gmail.com'
-MAIL_PORT = 587
+MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
-MAIL_USERNAME = os.environ.get('austin.lazarus@gmail.com')
-MAIL_PASSWORD = os.environ.get('GetFitAustin')
+MAIL_USERNAME = 'austin.lazarus@gmail.com'
+MAIL_PASSWORD = 'GetFitAustin'
 
 # administrator list
 ADMINS = ['austin.lazarus@gmail.com']

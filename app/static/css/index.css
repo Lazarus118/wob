@@ -157,7 +157,7 @@ body {
 	background:#fff;
 	margin-top:10%;
 	position:relative;
-/*
+	/*
         -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -287,6 +287,10 @@ body {
 	margin-top:-10%;
 }
 
+.hold button:hover {
+	background-color: #674172;
+}
+
 #hold_result {
 	display:none;
 	visibility:hidden;
@@ -302,6 +306,10 @@ body {
 	width:50%;
 	float:right;
 	margin-top:-10%;
+}
+
+.pay button:hover {
+	background-color: #674172;
 }
 
 .entries-desc {
@@ -406,6 +414,39 @@ body {
 	border:1px dotted #DADFE1;
 	position:absolute;
 	top:5%;
+}
+
+#feedback { 
+  height: 104px; 
+  width: 104px; 
+  position: fixed; 
+  top: 40%; 
+  z-index: 999;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg); 
+  -moz-transform: rotate(-90deg); 
+  -o-transform: rotate(-90deg); 
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+#feedback a { 
+  display: block; 
+  background: #F64747; 
+  height: 30px;
+  width: 103px;
+  padding: 8px 16px;
+  color: #fff; 
+  font-family: Arial, sans-serif; 
+  font-size: 17px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  border-bottom: solid 3px #333;
+  border-left: solid 3px #333;
+  border-right: solid 3px #fff;
+}
+
+#feedback a:hover { 
+  background: #350e35; 
 }
 
 .login_wrapper {

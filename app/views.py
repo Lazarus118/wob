@@ -10,6 +10,8 @@ from twilio.rest import TwilioRestClient
 import os
 from datetime import datetime
 from sqlalchemy import func
+from flask_mail import Mail, Message
+from . import mail 
 
 # Find these values at https://twilio.com/user/account
 account_sid = "AC18d08fbe124a82b91b3d5c16050bde97"
@@ -38,14 +40,26 @@ def index():
 def soon():
         return render_template('soon.html')		
 
+				
 #***********************************************************************#
 # // Message_sent //
 #***********************************************************************#
 @app.route('/message_sent', methods=['POST'])
 def message_sent():
+   
+    # // FOR SMS ///
 	message = request.args.get('message')
 	#text_message = client.messages.create(to="+17676144347", from_="+12057915604", body="Please place this on Hold...")
-	flash('Message sent to Supplier!')
+	
+	# // FOR EMAIL //
+	msg = Message("Send mail example!",
+		  sender="test@wob.fashion",
+		  recipients=["austin.lazarus@gmail.com"])	
+	msg.body = "Hi,\nThis is a test. Please ignore."
+	mail.send(msg)
+	
+	
+	flash('Message sent to Provider!')
 	return redirect(url_for('main'))
 	
 #***********************************************************************#
@@ -175,9 +189,17 @@ def signup():
 		text_file = open('/var/www/wob/signup_entries.txt', 'a')
 		#For Local
 		#text_file = open('email_entries.txt', 'a')
-		
 		text_file.write('\n %s' % form_data )
 		text_file.close()
+		
+		#*******************************************************#
+		# // FOR EMAIL //
+		msg = Message("New Signup from user!",
+			  sender="sign_up@wob.fashion",
+			  recipients=["austin.lazarus@gmail.com"])	
+		msg.body = form_data
+		mail.send(msg)
+		
 		return redirect(url_for('waiting'))
 	'''
 	if request.method == 'POST':

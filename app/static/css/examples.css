@@ -218,15 +218,17 @@ video {
 }
 
 .enter {
-  display: block;
-  position: absolute;
-  width: 20%;
-  height: 36%;
-  background: #000;
-  opacity: 0.8;
-  border-radius: 2px;
-  top: 31%;
-  margin-left: 20%;
+    display: block;    
+    position: absolute;    
+    width: 20%;    
+    height: 22%; 
+    z-index: 1000;   
+    background: #000;   
+    opacity: 0.8;    
+    border-radius: 2px;    
+    top: 39%;    
+    margin-left: 2%;
+	padding-bottom: 2%;
 }
 
 .enter input {
@@ -253,7 +255,7 @@ video {
 	margin-left: 9%;
 }
 
-.enter h3{
+.enter h3 {
 	block: inline-block;
 	float: left;
 	color: #fff;
@@ -311,16 +313,17 @@ textarea {
 }
 
 .sign_up {
-  display: block;
-  position: absolute;
-  width: 20%;
-  height: 60%;
-  z-index: 1000;
-  background: #000;
-  opacity: 0.8;
-  border-radius: 2px;
-  top: 31%;
-  margin-left: 20%;
+    display: block;    
+    position: absolute;    
+    width: 20%;    
+    height: 42%;    
+    z-index: 1000;    
+    background: #000;    
+    opacity: 0.8;    
+    border-radius: 2px;    
+    top: 39%;   
+    margin-left: 2%;
+	padding-bottom: 7%;
 }
 
 .sign_up  input {
