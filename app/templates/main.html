@@ -16,18 +16,23 @@
 			<!-- <a href="http://www.aulatech.co" target="blank"><img src="/static/img/ikea-fashion.jpg" /></a> -->
 		</div>
 	
-	<div class="entries">
+<div class="entries">
+
   {% for image in post|reverse()  %}
   
 <!-- ************************************************************************************** -->
    <div class="element"></div>	
    <div class="slide">
+   
+   	<div class="timer">
+		<p>Time left<span id="time"></span></p>
+	</div>
 
 		<div class="entries-img">
 			<a href="{{ url_for('profile', username=current_user.username, _external=True) }}"><img src="{{ image.photo_filename }}" width="100%"></a>
 				<div class="entries-likes">
-				 <p>- {{ like }} - likes</p>	  
-			</div>
+					<p>- {{ like }} - likes</p>	  
+				</div>
 		</div>
 <!-- ************************************************************************************** -->		
 	<div class="entries-desc">

@@ -177,11 +177,11 @@ def login():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
 	form = signupForm(request.form)
-	form_data = {request.form['username'],
+	form_data = str({request.form['username'],
 				 request.form['password'],
 				 request.form['email'],
 				 request.form['number'],
-				 request.form['user_option']}
+				 request.form['user_option']}).encode('utf-16')
 	
 	if request.method == 'POST':
 	
@@ -201,8 +201,10 @@ def signup():
 		mail.send(msg)
 		
 		return redirect(url_for('waiting'))
+	
 	'''
-	if request.method == 'POST':
+	
+		#*******************************************************#
 		enter_signup = User(request.form['username'],
 				    request.form['password'],
 				    request.form['email'],
@@ -210,27 +212,13 @@ def signup():
 				    request.form['user_option'])
 		db.session.add(enter_signup)
 		db.session.commit()
+		return redirect(url_for('login'))
 		
 	'''	
 		
 	return render_template('sign_up.html')
 
-'''
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-	
-	form = signupForm(request.form)
-	user = request.form['user']
-	retailer = request.form['retailer']
-	
-	if request.method == 'POST':
-		if user == 'checked':
-			user == 'user' 
-		elif retailer == 'checked': 
-			retailer == 'retailer'
-		
-	return render_template('test.html', user=user, retailer=retailer)
-'''
+
 #***********************************************************************#
 # // LOGOUT //
 #***********************************************************************#		
@@ -241,8 +229,14 @@ def logout():
 	
 #***********************************************************************#
 # // ADMIN //
+#***********************************************************************#
+
+# For // SERVER // 
 #***********************************************************************#	
+#UPLOAD_FOLDER = '/var/www/wob/app/static/img/'
+# For // LOCAL // 
 UPLOAD_FOLDER = '/home/lazarus/Programming/Flask_apps/wob-copy/app/static/img/'
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 	
@@ -270,13 +264,9 @@ def admin():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			path = '/static/img/'
 			
-			# // FOR LOCAL HOST ///
-			#path = '/static/img/'
-			
-			# // FOR SERVER //
-			path = '/var/www/wob/static/img/'
-			
+
 			form = Image(request.form['photo_description'], 
 						 path + filename,
 						 request.form['amount'],
