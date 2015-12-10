@@ -38,14 +38,10 @@
 	<div class="entries-desc">
 		<a href="{{ url_for('profile', username=current_user.username, _external=True) }}"><h4 align="left">{{ image.photo_description }}</h4></a>
 		<hr>
-		<h5>${{ image.price }} // {{ image.amount }}pcs.</h5>
+		<h5>{{ image.price }} // {{ image.amount }}pcs.</h5>
 		<h5>Size: {{ image.size }}</h5>
 		<!-- <h6 align="center">By ~ {{ image.company }}</h6> -->
-
-	
-				<h6 align="center">By ~ {{ image.user.username }}</h6>
-
-
+		<h6 align="center">By ~ {{ image.user.username }}</h6>
 		<hr>
 		<p align="center">uploaded : {{ image.uploaded_at }}</p>
 	</div>
@@ -66,8 +62,9 @@
 <!-- ************************************************************************************** -->
 	
 <div class="social">
+		<button type="submit"  name="facebook" class="facebook_button"><img src="/static/img/facebook.png" width="24px" height="24px" /></button>
 	<form method="POST" action="{{ url_for('liked') }}"> 
-		<button type="submit" value="1" name="liked" class="like_button"><img src="/static/img/likes.png" width="24px" height="24px" name="like" /></button>
+		<button type="submit" value="1" name="liked" class="like_button"><img src="/static/img/likes.png" width="24px" height="24px"  /></button>
 	</form>
 	<hr>
 

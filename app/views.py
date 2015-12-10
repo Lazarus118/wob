@@ -10,8 +10,8 @@ from twilio.rest import TwilioRestClient
 import os
 from datetime import datetime
 from sqlalchemy import func
-from flask_mail import Mail, Message
-from . import mail 
+#from flask_mail import Mail, Message
+from . import mail, Message 
 
 # Find these values at https://twilio.com/user/account
 account_sid = "AC18d08fbe124a82b91b3d5c16050bde97"

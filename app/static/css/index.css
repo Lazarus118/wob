@@ -277,6 +277,18 @@ body {
 	top:0;
 }
 
+.social button:nth-child(2) {
+	border:none;
+	display:block;
+	margin-right:10%;
+	background:none;
+	opacity:.5;
+	clear:both;
+	float:right;
+	top:0;
+
+}
+
 .entries-img img {
 	max-height:350px;
 	border:0 none;

@@ -29,7 +29,7 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var twentyfourMinutes = 60 * 24,
+    var twentyfourMinutes = 60 * 1440,
         display = document.querySelector('#time');
     startTimer(twentyfourMinutes, display);
 };
